@@ -1,0 +1,348 @@
+[
+    {
+        "id": "723f02677094423d",
+        "type": "tab",
+        "label": "Flujo 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2dffea69df25e27b",
+        "type": "ui_led",
+        "z": "723f02677094423d",
+        "order": 2,
+        "group": "a74cc40139574d5e",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ffea00",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 710,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a834f1ee42068121",
+        "type": "s7 in",
+        "z": "723f02677094423d",
+        "endpoint": "0fad406cffa35613",
+        "mode": "single",
+        "variable": "ROJO",
+        "diff": true,
+        "name": "",
+        "x": 310,
+        "y": 300,
+        "wires": [
+            [
+                "4ebd9c7ea0df2477"
+            ]
+        ]
+    },
+    {
+        "id": "7330fe3975bd55fc",
+        "type": "s7 in",
+        "z": "723f02677094423d",
+        "endpoint": "0fad406cffa35613",
+        "mode": "single",
+        "variable": "VERDE",
+        "diff": true,
+        "name": "",
+        "x": 310,
+        "y": 100,
+        "wires": [
+            [
+                "e1299db81e9a93f5",
+                "b9125ad1aab70271"
+            ]
+        ]
+    },
+    {
+        "id": "f2f263d0928fad1e",
+        "type": "s7 in",
+        "z": "723f02677094423d",
+        "endpoint": "0fad406cffa35613",
+        "mode": "single",
+        "variable": "AMARILLO",
+        "diff": true,
+        "name": "",
+        "x": 330,
+        "y": 220,
+        "wires": [
+            [
+                "2dffea69df25e27b"
+            ]
+        ]
+    },
+    {
+        "id": "4ebd9c7ea0df2477",
+        "type": "ui_led",
+        "z": "723f02677094423d",
+        "order": 1,
+        "group": "a74cc40139574d5e",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 710,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "e1299db81e9a93f5",
+        "type": "ui_led",
+        "z": "723f02677094423d",
+        "order": 3,
+        "group": "a74cc40139574d5e",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 710,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b9125ad1aab70271",
+        "type": "debug",
+        "z": "723f02677094423d",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a3e9348d1f37ece3",
+        "type": "ui_text",
+        "z": "723f02677094423d",
+        "group": "a74cc40139574d5e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Plazas Restantes",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 750,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "31a673b9c8e9eb72",
+        "type": "s7 in",
+        "z": "723f02677094423d",
+        "endpoint": "0fad406cffa35613",
+        "mode": "single",
+        "variable": "Plazas disponibles",
+        "diff": true,
+        "name": "",
+        "x": 310,
+        "y": 400,
+        "wires": [
+            [
+                "a3e9348d1f37ece3",
+                "d27542b3e3ccf9e2"
+            ]
+        ]
+    },
+    {
+        "id": "23a71b867ffbdf23",
+        "type": "inject",
+        "z": "723f02677094423d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 270,
+        "y": 540,
+        "wires": [
+            [
+                "d27542b3e3ccf9e2"
+            ]
+        ]
+    },
+    {
+        "id": "f5dfb4a05f517f45",
+        "type": "inject",
+        "z": "723f02677094423d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "20",
+        "payloadType": "num",
+        "x": 270,
+        "y": 600,
+        "wires": [
+            [
+                "d27542b3e3ccf9e2"
+            ]
+        ]
+    },
+    {
+        "id": "d27542b3e3ccf9e2",
+        "type": "function",
+        "z": "723f02677094423d",
+        "name": "W_DB",
+        "func": "let capacidad= msg.payload; \n\nlet tzoffset = (new Date()).getTimezoneOffset()*60000;\nlet fecha =(new Date(Date.now() - tzoffset)).toISOString().slice(0, -1); \n\n\nmsg.topic = \"INSERT INTO garaje VALUES('\"+fecha+\"','\"+capacidad+\"')\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 540,
+        "wires": [
+            [
+                "7e6b5391a13c67b2"
+            ]
+        ]
+    },
+    {
+        "id": "7e6b5391a13c67b2",
+        "type": "mysql",
+        "z": "723f02677094423d",
+        "mydb": "c48815ea129b217f",
+        "name": "",
+        "x": 690,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a74cc40139574d5e",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "77e816a692e9fdc6",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "0fad406cffa35613",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.0.1",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "",
+        "busaddr": "2",
+        "cycletime": "1000",
+        "timeout": "2000",
+        "name": "PLC",
+        "vartable": [
+            {
+                "addr": "MW110",
+                "name": "Número de Coches"
+            },
+            {
+                "addr": "Q0.0",
+                "name": "VERDE"
+            },
+            {
+                "addr": "Q0.1",
+                "name": "AMARILLO"
+            },
+            {
+                "addr": "Q0.2",
+                "name": "ROJO"
+            },
+            {
+                "addr": "MW0",
+                "name": "Plazas disponibles"
+            }
+        ]
+    },
+    {
+        "id": "c48815ea129b217f",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "pruebas_db",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "77e816a692e9fdc6",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    }
+]
